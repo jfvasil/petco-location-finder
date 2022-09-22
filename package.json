@@ -1,20 +1,28 @@
 {
-  "name": "todolist-review-app",
+  "name": "petco-location-finder",
   "version": "1.0.0",
-  "description": "",
+  "description": "match pog with location in store",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "John Vasil",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "mongodb": "^3.6.5",
-    "mongoose": "^5.12.3",
-    "nodemon": "^2.0.7"
-  }
+    "dotenv": "^8.6.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongodb": "^3.7.3",
+    "mongoose": "^5.13.15",
+    "nodemon": "^2.0.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfvasil/petco-location-finder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jfvasil/petco-location-finder/issues"
+  },
+  "homepage": "https://github.com/jfvasil/petco-location-finder#readme"
 }

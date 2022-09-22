@@ -1,5 +1,3 @@
-const Todo = require('../models/Todo')
-
 module.exports = {
     getTodos: async (req,res)=>{
         try{
