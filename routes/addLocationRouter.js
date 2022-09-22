@@ -1,9 +1,7 @@
-router.get('/', todosController.getTodos)
+const addLocationController = require("../controllers/addLocationController")
 
-router.post('/createTodo', todosController.createTodo)
+router.get('/', addLocationController.getaddLocation)
 
-router.put('/markComplete', todosController.markComplete)
+router.post('/createLocation', addLocationController.createLocation)
 
-router.put('/markIncomplete', todosController.markIncomplete)
-
-router.delete('/deleteTodo', todosController.deleteTodo)
+router.delete('/deleteLocation', addLocationController.deleteLocation)

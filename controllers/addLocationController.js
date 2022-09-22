@@ -1,50 +1,28 @@
+const location = require('../models/locationModel')
+
 module.exports = {
-    getTodos: async (req,res)=>{
+    getaddLocation: async (req,res)=>{
         try{
-            const todoItems = await Todo.find()
-            const itemsLeft = await Todo.countDocuments({completed: false})
-            res.render('todos.ejs', {todos: todoItems, left: itemsLeft})
+            const Location = await location.find()
+            res.render('addLocation.ejs', {location: Location})
         }catch(err){
             console.log(err)
         }
     },
-    createTodo: async (req, res)=>{
+    createLocation: async (req, res)=>{
         try{
-            await Todo.create({todo: req.body.todoItem, completed: false})
-            console.log('Todo has been added!')
-            res.redirect('/todos')
+            await location.create({broadLocation: req.body.broad, specificLocation: req.body.specific, POG: req.body.POGname })
+            console.log('Location information has been added!')
+            res.redirect('/addLocation')
         }catch(err){
             console.log(err)
         }
     },
-    markComplete: async (req, res)=>{
+    deleteLocation: async (req, res)=>{
         try{
-            await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: true
-            })
-            console.log('Marked Complete')
-            res.json('Marked Complete')
-        }catch(err){
-            console.log(err)
-        }
-    },
-    markIncomplete: async (req, res)=>{
-        try{
-            await Todo.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: false
-            })
-            console.log('Marked Incomplete')
-            res.json('Marked Incomplete')
-        }catch(err){
-            console.log(err)
-        }
-    },
-    deleteTodo: async (req, res)=>{
-        console.log(req.body.todoIdFromJSFile)
-        try{
-            await Todo.findOneAndDelete({_id:req.body.todoIdFromJSFile})
-            console.log('Deleted Todo')
-            res.json('Deleted It')
+            await location.findOneAndDelete({_id:req.body.idFromLocation})
+            console.log('Deleted Information')
+            res.json('Deleted Information')
         }catch(err){
             console.log(err)
         }

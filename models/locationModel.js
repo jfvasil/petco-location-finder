@@ -8,6 +8,10 @@ const locationSchema = new mongoose.Schema({
   specificLocation: {
     type: String,
     required: true,
+  },
+  POG: {
+    type: String, 
+    required: true,
   }
 })
 
