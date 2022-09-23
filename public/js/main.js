@@ -6,8 +6,8 @@ async function getDirections(){
     try{
     let res = await fetch('/location')
     let data = await res.json()
-    broad.innerHTML = data.pog.broadLocation
-    specific.innerHTML = data.pog.specificLocation
+    broad.innerHTML = 
+    specific.innerHTML = 
     }
     
     catch(err){
